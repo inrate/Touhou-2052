@@ -1,13 +1,11 @@
 extends KinematicBody2D
 
-const ACCEL=100
 const MAX_SPEED=250
-const FRICT=1000
+var FM = Sprite
 
 #z = shoot
 #x = bombe
 #shift = slowdown / focusmode
-
 
 var velocity = Vector2.ZERO
 
