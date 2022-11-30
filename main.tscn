@@ -11,5 +11,7 @@
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="boss 1" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( 631, 55 )
 
 [node name="p1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 471, 250 )
