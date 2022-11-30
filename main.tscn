@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://backgrounds/ParallaxBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy/boss 1 nazi cirno/boss 1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ents/p1/p1.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 179, 595.5 )
 
 [node name="world" type="Node2D"]
 
@@ -15,3 +18,19 @@ position = Vector2( 631, 55 )
 
 [node name="p1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 471, 250 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 119, 180 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 62, 412.5 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 119, 180 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 948, 419 )
+shape = SubResource( 1 )
