@@ -7,10 +7,10 @@ const bullet_scene = preload("res://bullet/Cirno bullet/bullet.tscn")
 onready var shoot_timer = $ShootTimer
 onready var rotater = $Rotater
 
-const rotate_speed = 100
+const rotate_speed = -20
 const shooter_timer_wait_time = 0.2
-const spawn_point_count = 4
-const radius = 100
+const spawn_point_count = 12
+const radius = 50
 
 func _ready():
 	if direction == 1:

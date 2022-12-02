@@ -43,14 +43,14 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 21, 12 )
+position = Vector2( -46, -41 )
 frames = SubResource( 14 )
 animation = "idle"
 playing = true
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 62, 57 )
+position = Vector2( -1, 2 )
 shape = SubResource( 1 )
 
 [node name="ShootTimer" type="Timer" parent="."]
