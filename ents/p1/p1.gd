@@ -10,14 +10,14 @@ const bulletpath = preload("res://MCbullet.tscn")
 func shoot():
 	var MCbullet = bulletpath.instance()
 	get_parent().add_child(MCbullet)
-	MCbullet.position = Position2D.global_position
+	MCbullet.position = position
 	
 	
 var velocity = Vector2.ZERO
 
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	var input_vector=Vector2.ZERO
 	input_vector.x=Input.get_action_strength("ui_right")-Input.get_action_strength("ui_left")
