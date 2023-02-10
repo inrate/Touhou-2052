@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Enemy/cirno-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/boss 1 nazi cirno/boss 1.gd" type="Script" id=2]
@@ -31,8 +31,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 40.0125
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 17.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 20.0
+height = 44.0
 
 [node name="boss 1" type="KinematicBody2D"]
 position = Vector2( 174, 53 )
@@ -46,15 +51,24 @@ __meta__ = {
 position = Vector2( -46, -41 )
 frames = SubResource( 14 )
 animation = "idle"
+frame = 1
 playing = true
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 2 )
-shape = SubResource( 1 )
+shape = SubResource( 19 )
 
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotater" type="Node2D" parent="."]
 
+[node name="boss2d" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss2d"]
+position = Vector2( -1, 2 )
+shape = SubResource( 20 )
+
+[connection signal="child_entered_tree" from="." to="." method="_on_boss_1_child_entered_tree"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="area_entered" from="boss2d" to="." method="_on_Area2D_area_entered"]

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 var velocity = Vector2 (0, -1)
 var speed = 300
@@ -12,7 +12,7 @@ signal dealdamage(deal_damage)
 
 # Called when the node enters the scene tree for the first time.
 func _physics_process(delta):
-	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
+	pass
 
 func _on_area_entered(area):
 	emit_signal("dealdamage",bulletdamage)

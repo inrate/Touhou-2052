@@ -3,7 +3,7 @@ extends KinematicBody2D
 var velocity = Vector2 (0, -1)
 var speed = 300
 var bulletdamage = 5
-signal dealdamage(deal_damage)
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,9 +14,14 @@ signal dealdamage(deal_damage)
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
 
-func _on_area_entered(area):
-	emit_signal("dealdamage",bulletdamage)
+
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Area2D_area_entered(area):
+	if area.name!="bossbullet":
+		self.queue_free()
